@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+class Player {
+    int number;
+
+    public void guess() {
+        number =(int)(Math.random()*10);
+        System.out.println("the generated number is: "+number);
+    }
+}
+class Game extends Player{
+    void StartGame(int target) {
+
+
+
+        while(true) {
+
+            int guess=number;
+            if(target==guess) {
+                System.out.println("You are win");
+                break;
+            }
+            else {
+                System.out.println("Try again");
+                guess();
+            }
+        }
+    }
+}
+
+public class Program91 {
+
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+
+        int target=sc.nextInt();
+
+
+        Player player=new Player();
+        Game game=new Game();
+
+        player.guess();
+        game.StartGame(target);
+
+
+    }
+
+}
